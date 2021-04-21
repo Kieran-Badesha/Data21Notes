@@ -114,8 +114,12 @@ while x < 10:
 user_prompt = True
 
 while user_prompt:
-    age = input("What is your age?")
-    if age.isdigit():
+    age = int(input("What is your age?"))
+    if age:
         user_promt = False
     else:
         print("Please provide your answer as a digit")
+
+print(len(set("bob")))
+print(len("bob"))
+print(len(set("bob")) == len("bob"))
