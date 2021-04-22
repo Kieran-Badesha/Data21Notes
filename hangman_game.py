@@ -51,7 +51,6 @@ def get_word():
 
 
 # Function defines the game
-
 def play(word):
     # Shows the word as a series of underscores
     word_completion = "_" * len(word)
@@ -150,14 +149,13 @@ def play(word):
         print(f"Unluckeeeeeeeee {name}, you ran out of tries. The word was {word}")
 
 
-# Show them the letters they have already picked
 # Starting the game
 def hangman():
     hang_word = get_word()
     play(hang_word)
 
     # Offer to play again
-    while input("Would you like to play again? (Y/N) ").upper() == "Y":
+    while input("Would you like to play again? (Y/N) ").upper() == "Y" or "YES":
         hang_word = get_word()
         play(hang_word)
 
