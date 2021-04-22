@@ -51,9 +51,6 @@ def get_word():
 
 
 # Function defines the game
-# Guessing letters convert to upper in case guess is in lower
-# If the player guesses a single letter and has tries left, check against the guessed_letter set and either add
-# to guessed letter set or say this letter has already been guessed.
 
 def play(word):
     # Shows the word as a series of underscores
@@ -156,13 +153,13 @@ def play(word):
 # Show them the letters they have already picked
 # Starting the game
 def hangman():
-    word = get_word()
-    play(word)
+    hang_word = get_word()
+    play(hang_word)
 
     # Offer to play again
     while input("Would you like to play again? (Y/N) ").upper() == "Y":
-        word = get_word()
-        play(word)
+        hang_word = get_word()
+        play(hang_word)
 
 
 if __name__ == "__main__":
