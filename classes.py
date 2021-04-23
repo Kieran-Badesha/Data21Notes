@@ -17,7 +17,7 @@ bob = Dog("canine", "woof!")
 print(bob.animal_kind + ", ", "\n" + bob.bark)
 
 # Doesn't let you access objects/attributes with __
-# print(bob.__is_alive)
+pgrint(bob.__is_alive)
 
 # Using setters and getters though means you can access the hidden objects.
 print(Dog.get_is_alive(bob))
