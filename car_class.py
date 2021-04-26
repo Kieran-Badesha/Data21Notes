@@ -27,6 +27,7 @@ Max Speed: {self.max_speed+'Mph,': <10} Current Speed: {self.__current_speed}Mph
     def get_speed(self, __current_speed):
         return self.__current_speed
 
+
 # Apply the class function to some variables
 car1 = Car("Ferrari F40", "Sports", "1987", "202", "0")
 car2 = Car("Benz Velo", "Old Timey", "1894", '12', '0')
