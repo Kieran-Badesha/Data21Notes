@@ -2,7 +2,6 @@
 # age = int(input(f"Nice to meet you {name}. How old are you?"))
 
 # List of films in each category
-
 films_to_watch = {"under_12": ["All Dogs Go to Heaven", "Chicken Little", "The Mighty Ducks", "D2: The Mighty Ducks"],
                   "under_15": ["Forest Gump", "Black Panther", "Home Alone", "Avengers", "Godzilla vs. Kong"],
                   "under_18": ["Nobody", "Zack Snyder's Justice League", "Sound of Metal"],
@@ -28,21 +27,21 @@ while age_prompt:
     else:
         print("Please provide your answer as a positive whole number")
 
-# FROM THAT GIVE US THE TYPES OF FILM THEY CAN WATCH AT THE CINEMA
 
-if int(age_prompt) < 12:
+# FROM THAT GIVE US THE TYPES OF FILM THEY CAN WATCH AT THE CINEMA
+if int(age) < 12:
     print(f"In that case these are the films you can watch ")
     print(films_to_watch["under_12"])
-if 12 <= int(age_prompt) < 15:
+elif 12 <= int(age) < 15:
     print(f"In that case these are the films you can watch ")
     print(films_to_watch["under_12"])
     print(films_to_watch["under_15"])
-if 15 <= int(age_prompt) < 18:
+elif 15 <= int(age) < 18:
     print(f"In that case these are the films you can watch ")
     print(films_to_watch["under_12"])
     print(films_to_watch["under_15"])
     print(films_to_watch["under_18"])
-if int(age_prompt) > 18:
+else:
     print(f"In that case these are the films you can watch ")
     print(films_to_watch["under_12"])
     print(films_to_watch["under_15"])
