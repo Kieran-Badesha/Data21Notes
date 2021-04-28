@@ -1,7 +1,9 @@
 import csv
 
-
 # Extract function
+import pprint
+
+
 def extract_csv_file(csv_name: str, delim: str=',') -> list:
 
     try:
@@ -23,22 +25,27 @@ def extract_csv_file(csv_name: str, delim: str=',') -> list:
 # Transform function
 def transform_csv_file(csv_list):
 
-    # Only save the Full name and Email address
-    full_name_emails = []
-    for item in csv_list:
-        full_name_emails.append([item[i] for i in [1, 2, 4]])
+    try:
+        # Only save the Full name and Email address
+        full_name_emails = []
+        for item in csv_list:
+            full_name_emails.append([item[i] for i in [1, 2, 4]])
 
-    return full_name_emails
+        return full_name_emails
+    finally:
+        print('Transform complete')
 
 
 # Load function
-def load_csv_file(old_file_name: str, new_file_name: str):
+def load_csv_file(new_file_name: str, new_file_list: list):
+    try:
+        with open(new_file_name, 'w') as new_file:
+            csv_writer = csv.writer(new_file, lineterminator='\n')
+            csv_writer.writerows(new_file_list)
+    finally:
+        print('Load complete')
 
-    new_user_details = transform_csv_file(old_file_name)
-    with open(new_file_name, 'w') as new_file:
-        csv_writer = csv.writer(new_file)
-        csv_writer.writerows(new_user_details)
 
-
-extract_csv_file('user_details.csv')
-load_csv_file('user_details.csv', 'fullname+email')
+csv_reader = extract_csv_file('user_details.csv')
+new_file_list = transform_csv_file(csv_reader)
+load_csv_file('new_user_details.csv', new_file_list)
